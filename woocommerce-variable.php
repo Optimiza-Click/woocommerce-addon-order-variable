@@ -35,7 +35,7 @@ function woocommerce_variable_add_on( $item_id, $item, $product ){
 
 
     <?php foreach($variables as $variable => $name):
-        $replace = "/(" . $variable . "=)(\w+)/";
+        $replace = "/(" . $variable . "=)([\w&.\-]+)/";
             preg_match_all($replace, $_POST['items'], $output_array);
         
             preg_match_all("/(edit=)(\w+)/", $_POST['items'], $update);
